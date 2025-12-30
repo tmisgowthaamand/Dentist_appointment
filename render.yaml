@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: booking-system
+    runtime: docker
+    plan: free # Change to 'starter' if you need a persistent disk
+    region: singapore # Choose the region closest to your users
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      
+      # Telegram Bot Tokens
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # Set manually in Render Dashboard
+      - key: ADMIN_BOT_TOKEN
+        sync: false # Set manually in Render Dashboard
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+
+      # AI Services
+      - key: GEMINI_API_KEY
+        sync: false
+
+      # Google Sheets Database
+      - key: GOOGLE_SHEET_ID
+        sync: false
+      - key: GOOGLE_SERVICE_ACCOUNT_EMAIL
+        sync: false
+      - key: GOOGLE_PRIVATE_KEY
+        sync: false
+
+      # Razorpay Payments
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+
+      # Dynamic URLs (Render provides RENDER_EXTERNAL_URL automatically)
+      - key: SERVER_URL
+        fromContext: envVar
+        value: RENDER_EXTERNAL_URL
+      - key: RAZORPAY_WEBHOOK_URL
+        value: ${RENDER_EXTERNAL_URL}/webhooks/razorpay-webhook
+
+    # Health check to ensure the service is running
+    healthCheckPath: /
+    
+    # Optional: Persistent Disk (Requires 'starter' plan or higher)
+    # Uncomment the following lines if you upgrade to a paid plan to save reports permanently
+    # disk:
+    #   name: reports-storage
+    #   mountPath: /app/public/reports
+    #   sizeGB: 1

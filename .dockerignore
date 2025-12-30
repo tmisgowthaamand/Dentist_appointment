@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+dist
+.env
+.git
+.gitignore
+*.md
+tunnel_url.txt
+tunnel_new.txt
+whatsapp-session
+public/reports/*
+!public/reports/.gitkeep
