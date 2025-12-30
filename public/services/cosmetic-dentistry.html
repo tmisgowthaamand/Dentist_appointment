@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Dentistry | BrightCare Dental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D9488;
+            --primary-light: #F0FDFA;
+            --secondary: #0F172A;
+            --accent: #E0F2F1;
+            --glass: rgba(255, 255, 255, 0.9);
+            --border: rgba(226, 232, 240, 0.8);
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: #FAFAFA;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .service-hero {
+            padding: 180px 8% 100px;
+            background: linear-gradient(135deg, #FFF1F2 0%, #fff 100%);
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .content-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .feature-list li::before {
+            content: '✨';
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .image-placeholder {
+            background: var(--accent);
+            border-radius: 30px;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background: var(--secondary);
+            padding: 80px 8%;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div
+                style="background: var(--primary); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800;">
+                +</div>
+            <a href="/" class="logo">BrightCare<span>Dental</span></a>
+        </div>
+        <a href="https://t.me/Dentist01Bot"
+            style="background: var(--primary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Book
+            Now</a>
+    </nav>
+
+    <header class="service-hero">
+        <h1>Cosmetic Dentistry</h1>
+        <p>Transform your smile with our advanced cosmetic treatments. We combine art and science to create beautiful,
+            natural-looking results.</p>
+    </header>
+
+    <section class="content-section">
+        <div class="content-text">
+            <h2>Design Your Perfect Smile</h2>
+            <p>Our cosmetic dentistry services empower you to achieve the smile of your dreams. Whether you're looking
+                for a quick touch-up or a complete smile makeover, our specialists use the latest technology to deliver
+                stunning outcomes.</p>
+            <ul class="feature-list">
+                <li>Professional Teeth Whitening</li>
+                <li>Premium Porcelain Veneers</li>
+                <li>Invisalign Clear Aligners</li>
+                <li>Dental Implants & Bridges</li>
+                <li>Smile Design Consultations</li>
+            </ul>
+        </div>
+        <div class="image-placeholder">
+            <img src="https://images.unsplash.com/photo-1460672985063-6764ac8b9974?auto=format&fit=crop&q=80&w=1000"
+                alt="Cosmetic Smile">
+        </div>
+    </section>
+
+    <footer>
+        <h2>BrightCare<span>Dental</span></h2>
+        <p style="opacity: 0.6; margin-top: 10px;">The smile you deserve is one click away.</p>
+        <a href="https://t.me/Dentist01Bot" class="cta-btn">Start Your Transformation</a>
+    </footer>
+</body>
+
+</html>
