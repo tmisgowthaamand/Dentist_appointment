@@ -143,7 +143,7 @@ export function setupAdminBotHandlers(bot: Telegraf<Context>) {
 
             const msg = `📈 *Booking Statistics (Today)*\n\n` +
                 `👥 *Total Bookings:* ${total}\n` +
-                `💰 *Total Revenue:* ₹${revenue}\n` +
+                `💰 *Total Revenue:* Rs. ${revenue}\n` +
                 `💳 *Completion Rate:* ${total > 0 ? Math.round((paid / total) * 100) : 0}%\n\n`;
 
             await ctx.reply(msg, { parse_mode: 'Markdown' });
@@ -262,11 +262,11 @@ export function setupAdminBotHandlers(bot: Telegraf<Context>) {
             const appointments = await getAppointmentsToday();
             const total = appointments.length;
             const paid = appointments.filter(a => a.paymentStatus === 'Paid').length;
-            const revenue = paid * 100; // Assuming ₹100 per booking
+            const revenue = paid * 100; // Assuming Rs. 100 per booking
 
             const msg = `📈 *Booking Statistics (Today)*\n\n` +
                 `👥 *Total Bookings:* ${total}\n` +
-                `💰 *Total Revenue:* ₹${revenue}\n` +
+                `💰 *Total Revenue:* Rs. ${revenue}\n` +
                 `💳 *Completion Rate:* ${total > 0 ? Math.round((paid / total) * 100) : 0}%\n\n` +
                 `_Keep up the good work!_ 🦷`;
 

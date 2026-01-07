@@ -11,7 +11,7 @@ const razorpay = new Razorpay({
 });
 
 export async function createPaymentLink(appointment: Appointment) {
-    const amount = 100 * 100; // ₹100 in paise
+    const amount = 100 * 100; // Rs. 100 in paise
 
     // Sanitize phone number (must be 10 digits for Razorpay link in most cases)
     const sanitizedPhone = appointment.phone.replace(/\D/g, '');

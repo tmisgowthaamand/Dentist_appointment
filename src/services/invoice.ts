@@ -84,8 +84,8 @@ export async function generateInvoicePDF(appointment: Appointment): Promise<Buff
     doc.text("1", 25, y);
     doc.text(`Consultation - ${appointment.doctorName} (${appointment.slot})`, 45, y);
     doc.text("1", 130, y);
-    doc.text("₹100.00", 150, y);
-    doc.text("₹100.00", 175, y);
+    doc.text("Rs. 100.00", 150, y);
+    doc.text("Rs. 100.00", 175, y);
 
     y += 5;
     doc.setDrawColor(230, 230, 230);
@@ -96,11 +96,11 @@ export async function generateInvoicePDF(appointment: Appointment): Promise<Buff
     const summaryX = 140;
     doc.setFont("helvetica", "normal");
     doc.text("Subtotal:", summaryX, y);
-    doc.text("₹100.00", 190, y, { align: "right" });
+    doc.text("Rs. 100.00", 190, y, { align: "right" });
 
     y += 7;
     doc.text("Tax (0%):", summaryX, y);
-    doc.text("₹0.00", 190, y, { align: "right" });
+    doc.text("Rs. 0.00", 190, y, { align: "right" });
 
     y += 10;
     doc.setFillColor(primaryBlue[0], primaryBlue[1], primaryBlue[2]);
@@ -108,7 +108,7 @@ export async function generateInvoicePDF(appointment: Appointment): Promise<Buff
     doc.setTextColor(255, 255, 255);
     doc.setFont("helvetica", "bold");
     doc.text("TOTAL AMOUNT:", summaryX, y);
-    doc.text("₹100.00", 190, y, { align: "right" });
+    doc.text("Rs. 100.00", 190, y, { align: "right" });
 
     // --- FOOTER ---
     y = 240;

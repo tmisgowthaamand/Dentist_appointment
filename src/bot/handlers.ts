@@ -452,7 +452,7 @@ export function setupBotHandlers(bot: Telegraf<Context>, adminBot: Telegraf<Cont
                     const paymentLink: any = await createPaymentLink(appointment);
                     state.lastAppointmentId = appointmentId;
                     state.step = 'IDLE'; // Wait for webhook
-                    const sentMsg = await ctx.reply(`Your appointment has been booked! 🦷\nPlease complete the payment of ₹100 using this link to confirm:\n\n${paymentLink.short_url}`, {
+                    const sentMsg = await ctx.reply(`Your appointment has been booked! 🦷\nPlease complete the payment of Rs. 100 using this link to confirm:\n\n${paymentLink.short_url}`, {
                         parse_mode: 'Markdown',
                         ...Markup.inlineKeyboard([[Markup.button.url('💳 Pay Now', paymentLink.short_url)]])
                     });
@@ -473,7 +473,7 @@ Your slot is reserved under the **Pay at Clinic** option.
 📅 *Date:* ${appointment.date}
 ⏰ *Time:* ${appointment.slot}
 
-📌 *Note:* Please pay ₹100 at the front desk when you arrive. See you soon! 🦷`;
+📌 *Note:* Please pay Rs. 100 at the front desk when you arrive. See you soon! 🦷`;
 
                     state.lastAppointmentId = appointmentId;
                     state.step = 'AWAITING_REPORT_CHOICE';
@@ -550,11 +550,11 @@ Your slot is reserved under the **Pay at Clinic** option.
         const appointments = await getAppointmentsToday(); // Re-using today's for now, but conceptual
         const total = appointments.length;
         const paid = appointments.filter(a => a.paymentStatus === 'Paid').length;
-        const revenue = paid * 100; // Assuming ₹100 per booking
+        const revenue = paid * 100; // Assuming Rs. 100 per booking
 
         const msg = `📈 *Booking Statistics (Today)*\n\n` +
             `👥 *Total Bookings:* ${total}\n` +
-            `💰 *Total Revenue:* ₹${revenue}\n` +
+            `💰 *Total Revenue:* Rs. ${revenue}\n` +
             `💳 *Completion Rate:* ${total > 0 ? Math.round((paid / total) * 100) : 0}%\n\n` +
             `_Keep up the good work!_ 🦷`;
 
